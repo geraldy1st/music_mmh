@@ -1,4 +1,5 @@
 $primary-color: #444;
+$secondary-color: #ffc600;
 
 html {
   font-size: 10px;
@@ -11,9 +12,6 @@ html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
-body {
-  //   background-color: $primary-color(lighten($color: #000000, $amount: 1));
 }
 
 .keys {
@@ -33,15 +31,16 @@ body {
   transition: all 0.07s ease;
   width: 10rem;
   text-align: center;
-  color: white;
+  color: #fff;
   background: rgba(0, 0, 0, 0.4);
   text-shadow: 0 0 0.5rem black;
+  flex: 1;
 }
 
 .playing {
   transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+  border-color: $secondary-color;
+  box-shadow: 0 0 1rem $secondary-color;
 }
 
 kbd {
@@ -53,5 +52,6 @@ kbd {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #ffc600;
+  color: $secondary-color;
 }
+// @import "mobile";

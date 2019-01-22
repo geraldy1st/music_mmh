@@ -1,19 +1,20 @@
-window.addEventListener("keydown", function(e) {
+function playSound(e) {
   //   console.log(e.keyCode);
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  if (!audio) return; //to stop the function from running
+  //   if (!audio) return; //to stop the function from running
   audio.currentTime = 0; // rewind the start
   audio.play();
   key.classList.add("playing");
-  console.log(key);
-});
+  //   console.log(key);
+}
 
 function removeTransition(e) {
   if (e.propertyName !== "transform") return;
-  console.log(e.propertyName);
+  //   console.log(e.propertyName);
   this.classList.remove("playing");
 }
-const keys = document.querySelectorAll(".key");
 
+const keys = document.querySelectorAll(".key");
 keys.forEach(key => key.addEventListener("transitionend", removeTransition));
+window.addEventListener("keydown", playSound);
