@@ -2,7 +2,7 @@ $primary-color: #444;
 
 html {
   font-size: 10px;
-  //   background: url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background-image: url("../img/vynil.jpeg");
   background-size: cover;
 }
 
@@ -13,7 +13,7 @@ html {
   font-family: sans-serif;
 }
 body {
-  background-color: $primary-color;
+  //   background-color: $primary-color(lighten($color: #000000, $amount: 1));
 }
 
 .keys {
