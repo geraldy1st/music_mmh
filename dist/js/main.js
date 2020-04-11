@@ -1,3 +1,7 @@
+setTimeout(function () {
+  window.scrollTo(0, 1);
+}, 100);
+
 function playSound(e) {
   //   console.log(e.keyCode);
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -5,16 +9,16 @@ function playSound(e) {
   //   if (!audio) return; //to stop the function from running
   audio.currentTime = 0; // rewind the start
   audio.play();
-  key.classList.add("playing");
+  key.classList.add('playing');
   //   console.log(key);
 }
 
 function removeTransition(e) {
-  if (e.propertyName !== "transform") return;
+  if (e.propertyName !== 'transform') return;
   //   console.log(e.propertyName);
-  this.classList.remove("playing");
+  this.classList.remove('playing');
 }
 
-const keys = document.querySelectorAll(".key");
-keys.forEach(key => key.addEventListener("transitionend", removeTransition));
-window.addEventListener("keydown", playSound);
+const keys = document.querySelectorAll('.key');
+keys.forEach((key) => key.addEventListener('transitionend', removeTransition));
+window.addEventListener('keydown', playSound);
